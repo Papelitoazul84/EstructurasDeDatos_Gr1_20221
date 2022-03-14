@@ -1,6 +1,13 @@
 /*
 A este archivo se le agregaron todas las funciones necesarias para una
-funcion que retorne 
+funcion que retorne
+Contiene:
+-Funcion "getNext"
+-Funcion "getData"
+-Destructor De Lista
+-Funcion "size"
+-Funcion "empty"
+-Funcion "back"
 */
 #include <iostream>
 

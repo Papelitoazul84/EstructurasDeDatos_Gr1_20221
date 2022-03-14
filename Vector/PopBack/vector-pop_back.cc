@@ -1,3 +1,10 @@
+/*
+A este archivo se le agregaron todas las funciones necesarias para
+una funcion que elimine elementos al final del vector
+Contiene: 
+-Funcion "popBack"
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -29,20 +36,6 @@ private:
         storage = ns;
         capacity = capacity * 2;
     }
-
-    void resizeSub()
-    {
-        T* ns = new T[capacity - 1];
-        for (size_t i = 0; i < sz; i++)
-        {
-            ns[i] = storage[i];
-        }
-
-        delete [] storage;
-        storage = ns;
-        capacity--;
-    }
-    
 public:
 	
     void push_back(T elem) {
@@ -63,27 +56,20 @@ public:
         cout << endl;
     }
     
-    //INICIO DE PUSH FRONT
-
-    //Funcion De Taller
     void push_front(T elem)
     {
-    	//Crear nuevo espacio
     	if (sz == capacity)
     	{
     		resize();
 		}
 		
-		//Mover elementos del vector a la derecha
 		moveElement();
 		
-		//Agregar nuevo elemento al inicio
 		storage[0] = elem;
 		
 		sz++;
 	}
 	
-	//Subfuncion de reposicionamiento de elementos del vector
 	void moveElement()
 	{
 		for (int i = sz; i > 0; i--)
@@ -91,17 +77,19 @@ public:
 			storage[i] = storage[i - 1];
 		}
 	}
-    //FIN DE PUSH FRONT
 
-    //INICIO DE POP BACK
+    //INICIO CAMBIOS
+    /*
+    Funcion que elimina el ultimo elemento de un vector, esto lo hace
+    sacando del conteo de elementos a el ultimo de estos, de esta
+    forma el ultimo elemento se volvera parte de la basura contenida
+    en la diferencia entre 'sz' y 'storage'
+    */
     void pop_back()
     {
-        resizeSub();
         sz--;
     }
-
-
-    //FIN DE POP BACK
+    //FIN CAMBIOS
 };
 
 int main() {

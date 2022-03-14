@@ -2,7 +2,8 @@
 A este archivo se le agregaron todas las funciones necesarias para
 una funcion que agregue elementos al vector en la parte del frente
 Contiene:
-
+-Funcion "pushFront"
+-Funcion auxiliar "moveElement"
 */
 
 #include <iostream>

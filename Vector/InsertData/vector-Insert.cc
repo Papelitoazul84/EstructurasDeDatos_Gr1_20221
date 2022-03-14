@@ -72,6 +72,9 @@ public:
     Despues de eso inserta el elemento deseado en la posicion que
     quedo libre
     Finalmente indica el aumento de tamaño del vector
+
+    POSIBLE ERROR: Si se da una posicion fuera del vector tal vez
+    se acceda a memoria que aun no ha sido reservada
     */
     void insert(T elem, size_t pos)
     {

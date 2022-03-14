@@ -1,6 +1,6 @@
 /*
-A este archivo se le agregaron todas las funciones necesarias para una
-funcion que retorne
+A este archivo se le agregaron todas las funciones necesarias para
+que retorne el dato dentro del ultimo nodo
 Contiene:
 -Funcion "getNext"
 -Funcion "getData"
@@ -29,7 +29,6 @@ private:
         void setNext(Node* n) 
         { 
             next = n; 
-        
         }
 
         //Funcion que retorna el siguiente nodo al que se esta ejecutando

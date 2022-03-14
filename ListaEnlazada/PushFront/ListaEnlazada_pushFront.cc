@@ -1,8 +1,9 @@
 /*
-A este archivo se le agregaron todas las funciones necesarias para 
-retornar el dato contenido dentro del primer nodo
+A este archivo se le agregaron todas las funciones necesarias para poder
+meter un nuevo nodo al inicio de la lista, cambiando el indicador de
+"first" y cambiando el puntero del nuevo nodo
 Contiene:
--Funcion "front"
+-Funcion "pushFront"
 */
 #include <iostream>
 
@@ -37,12 +38,13 @@ private:
         }
 
     };
-
     Node* first;
     Node* last;
     size_t sz;
 
+
 public:
+
     List() : first(nullptr), last(nullptr), sz(0) {}
 
     ~List()
@@ -70,6 +72,7 @@ public:
         return s;
     }
 
+    
     void push_back(T elem)
     {
         Node* n = new Node(elem);
@@ -83,12 +86,35 @@ public:
     }
 
     /*
-    Funcion que revisa el ultimo nodo mediante el apuntador 'first' y
-    devuelve los datos guardados en ese nodo
+    Coloca un nuevo elemento nodo al inicio de la lista
+    Primero crea un nuevo nodo el cual usa el constructor con parametros
+    luego confirma si la lista esta vacia, si es asi hace que el
+    nodo ingresado sea tanto el 'first' como el 'last' de la lista
+    Si la lista no esta vacia cambia el puntero del nuevo nodo hacia
+    el primer elemento de la lista y cambia la propiedad de first
+    Finalmente actualiza la cantidad de datos que contiene la lista
     */
-    T front()
+    void push_front(T elem)
     {
-        return first->getData();
+        //Crear nodo
+        Node* n = new Node(elem);
+
+        //Comprobar si la lista esta vacia
+        if(empty())
+        {
+            //Actualizar valores lista
+            first = n;
+            last = n;
+        }
+        else
+        {
+            //Actualizar apuntador del nodo y valores de la lista
+            n->setNext(first);
+            first = n;
+        }
+
+        //Actualizar tamaño de la lista
+        sz++;
     }
 };
 
@@ -98,10 +124,8 @@ int main()
 
    for (int i = 1; i <=5; i++)
    {
-        c->push_back(i);
+        c->push_front(i);
    }
-
-    cout << endl << c->front();
 
     return 0;
 }

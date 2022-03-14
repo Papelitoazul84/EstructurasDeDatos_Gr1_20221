@@ -2,8 +2,8 @@
 A este archivo se le agregaron todas las funciones necesarias para 
 una funcion que elimine el elemento del final del vector en 
 cada ejecucion
-Contiene: 
-
+Contiene:
+-Funcion "popFront"
 */
 #include <iostream>
 

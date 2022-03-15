@@ -8,9 +8,10 @@ A partir de esta base se crearan archivos cada uno exclusivamente la funcion de 
 
 ## Colaboraciones Necesarias
 Estos son algunos cambios que son requeridos dentro de las funciones ya existentes del vector, si es necesario pueden ser creados nuevos archivos
-- En la funcion del "insert" del vector hay un error que se da cuando la posicion dada por parametro no esta dentro del vector, al ocurrir esto existe la posibilidad de acceder a memoria que no sea propiedad del programa por lo que hay que agregar un limite a esta posicion
+
 - Dentro de las funciones del vector hace falta la funcion 'ensure' al esta haber sido agregada tiempo despues en clase aun no ha sido incluida
-- Aun no han sido implementados los algoritmos de ordenamiento, tanto el "ordenamiento cuadratico" como el "pseudo algoritmico" aun requieren ser implementados
+- Aun no han sido implementados los algoritmos de ordenamiento, tanto el "ordenamiento cuadratico" como el "pseudo algoritmico" aun requieren ser implementados (Vectores)
+- Aplicar metodos de ordenamiento para listas
 
 Universidad Tecnologica De Pereira
 2022-1

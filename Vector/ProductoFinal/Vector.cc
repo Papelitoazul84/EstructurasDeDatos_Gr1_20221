@@ -41,18 +41,6 @@ private:
         capacity = capacity + mv;
     }
 
-    void resizeSub()
-    {
-        T* ns = new T[capacity - 1];
-        for (size_t i = 0; i < sz; i++)
-        {
-            ns[i] = storage[i];
-        }
-
-        delete [] storage;
-        storage = ns;
-        capacity--;
-    }
 public:
 
     void push_back(T elem) {
@@ -73,27 +61,20 @@ public:
         cout << endl;
     }
     
-    //INICIO DE PUSH FRONT
-
-    //Funcion De Taller
     void push_front(T elem)
     {
-    	//Crear nuevo espacio
     	if (sz == capacity)
     	{
     		resize();
 		}
 		
-		//Mover elementos del vector a la derecha
 		moveElement();
 		
-		//Agregar nuevo elemento al inicio
 		storage[0] = elem;
 		
 		sz++;
 	}
 	
-	//Subfuncion de reposicionamiento de elementos del vector
 	void moveElement()
 	{
 		for (int i = sz; i > 0; i--)
@@ -101,40 +82,28 @@ public:
 			storage[i] = storage[i - 1];
 		}
 	}
-    //FIN DE PUSH FRONT
 
-    //INICIO DE POP BACK
     void pop_back()
     {
-        resizeSub();
         sz--;
     }
-    //FIN DE POP BACK
 
-    //INICIO DE POP FRONT
     void pop_front()
     {
-        //Mover todos los componentes hacia la izquierda, excepto el primero este simplemente se re-escribira
         for (int i = 1; i < sz; i++)
         {
             storage[i - 1] = storage[i];
         }
 
-        //Ejecutar la reduccion del tamaño del vector
-        resizeSub();
         sz--;
     }
-    //FIN DE POP FRONT
-
-    //INICIO DE INSERT
+    
     void insert(T elem, size_t pos)
     {
-        //Aumentar el espacio en el vector
         if (sz == capacity) {
             resize();
         }
 
-        //Mover elementos desde "pos" hacia la derecha, dejando el espacio para guardar el elemento
         for(int i = sz; i > pos ;i--)
         {
             storage[i + 1] = storage[i];
@@ -144,9 +113,7 @@ public:
 
         sz++;
     }
-    //FIN DE INSERT
 
-    //INICIO DE REMOVE
     void remove(size_t pos)
     {
         for(int i = pos; i < sz; i++)
@@ -154,18 +121,14 @@ public:
             storage[i] = storage[i + 1];
         }
 
-        resizeSub();
         sz--;
     }
-    //FIN DE REMOVE
 
-    //INICIO DE INSERT VECTOR
     void insertVector(Vector<T> other, size_t pos)
     {
-        //Reservar el espacio para todos los elementos nuevos a guardar
         resize(other.sz);
 
-        //Hacer que los espacios reservados esten en la posicion deseada
+
         for (int i = 0; i < other.sz; i++)
         {
             for(int i = sz; i >= pos; i--)
@@ -176,13 +139,11 @@ public:
             sz++;
         }
         
-        //Meter los elementos uno por uno dentro del vector en su posicion reservada
         for(int i = 0; i < other.sz; i++)
         {
             storage[pos + i] = other.storage[i];
         }
     }
-    //FIN DE INSERT VECTOR
 };
 
 int main() {

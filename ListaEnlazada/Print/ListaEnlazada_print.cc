@@ -64,8 +64,8 @@ public:
         size_t s = 0;
         Node* n = first;
         while(n != nullptr) {
-            s++;//cuento un elemento mas
-            n = n->getNext();//n pasa a ser el siguiente
+            s++;
+            n = n->getNext();
         }
         return s;
     }

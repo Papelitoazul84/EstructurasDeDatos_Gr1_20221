@@ -74,68 +74,6 @@ public:
         return s;
     }
 
-    void push_back(T elem)
-    {
-        Node* n = new Node(elem);
-
-        if (empty())
-        {
-        	first = n;
-		}
-        else
-        {
-        	last->setNext(n);
-        	n->setPrev(last);
-		}
-
-        last = n;
-
-        sz++;
-    }
-
-	/*
-    void push_back(List<T>* other)
-    {
-        List<T>* tmp;
-        Node* n = other->first;
-
-        for(size_t i = 0; i < other->sz; i++)
-        {
-            n->getData();
-
-            tmp.push_back(n->getData);
-
-            n = n->getNext;
-        }
-
-        last->setNext(tmp.first);
-        last = tmp.last;
-
-        last->setNext(nullptr);
-
-        sz = sz + tmp.sz;
-    }
-	*/
-
-    void push_front(T elem)
-    {
-        Node* n = new Node(elem);
-
-        if(empty())
-        {
-            last = n;
-        }
-        else
-        {
-            n->setNext(first);
-            first->setPrev(n);
-        }
-
-        first = n;
-
-        sz++;
-    }
-
     void print()
     {
         Node* n = first;
@@ -159,28 +97,14 @@ public:
         return last->getData();
     }
 
-    void pop_back()
-    {
-        last = last->getPrev();
+    /*
+    Esta es otra funcion que cambia mucho, su funcionamiento es muy similar pero al usar dobles enlaces se puede usar la "organizacion 
+    binaria", lo que hace esto es dividir la lista por la mitad dependiendo a que extremo de la lista este mas cerca el dato buscado
+    Mediante condicionales comprueba si el nodo buscado esta mas cerca del final o del inicio de la lista
+    Dependiendo de esto recorrera la lista hacia adelante o hacia atras
 
-        delete last->getNext();
-
-        last->setNext(nullptr);
-
-        sz--;
-    }
-
-    void pop_front()
-    {
-        first = first->getNext();
-
-        delete first->getPrev();
-
-        first->setPrev(nullptr);
-
-        sz--;
-    }
-
+    Este algoritmo tiene una efectividad muy alta ya que en el peor de los casos recorrera solo la mitad de la lista
+    */
     T at (size_t p)
     {
         Node* n;
@@ -207,35 +131,12 @@ public:
         return n->getData();
     }
 
-    void insert(size_t p, size_t elem)
-    {
-        Node* n = new Node(elem);
-        Node* r = first;
-
-        for(size_t i = 1; i < p-1; i++)
-        {
-            r = r->getNext();
-        }
-
-        n->setNext(r->getNext());
-        n->setPrev(r);
-        r->setNext(n);
-
-        sz++;
-    }
 };
 
 int main()
 {
     List<int>* c = new List<int>();
 
-    for (int i = 1; i <=5; i++)
-    {
-        c->push_back(i);
-    }
-    c->print();
-
-	c->insert(5, 9);
 	c->print();
 
     return 0;

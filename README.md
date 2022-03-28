@@ -7,11 +7,12 @@ A partir de esta base se crearan archivos cada uno exclusivamente la funcion de 
 *Cada estructura de datos tendra un archivo completamente funcional que contenga todas las funciones integradas trabajando sin cruces o problemas entre ellas*
 
 ## Colaboraciones Necesarias
-Estos son algunos cambios que son requeridos dentro de las funciones ya existentes del vector, si es necesario pueden ser creados nuevos archivos
+Estos son algunos cambios que son requeridos dentro del repositorio, si es necesario pueden ser creados nuevos archivos
 
-- Dentro de las funciones del vector hace falta la funcion 'ensure' al esta haber sido agregada tiempo despues en clase aun no ha sido incluida
-- Aun no han sido implementados los algoritmos de ordenamiento, tanto el "ordenamiento cuadratico" como el "pseudo algoritmico" aun requieren ser implementados (Vectores)
-- Aplicar metodos de ordenamiento para listas
+- Dentro de las funciones del vector hace falta la funcion 'ensure'
+- Necesario todos los algoritmos de ordenamiento
+- Extraer cada funcion de lista doblemente enlazada
+- Inicializar tema grafos
 
 Universidad Tecnologica De Pereira
 2022-1

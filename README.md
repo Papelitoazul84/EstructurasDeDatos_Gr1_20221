@@ -11,7 +11,15 @@ Estos son algunos cambios que son requeridos dentro del repositorio, si es neces
 
 - Dentro de las funciones del vector hace falta la funcion 'ensure'
 - Necesario todos los algoritmos de ordenamiento
-- Extraer cada funcion de lista doblemente enlazada
+- 1. Merge Sort 
+- 2. QuickSort
+- 3. Queue
+- 4. Stack
+- 5. Sorted List
+- 6. Sorted Vector
+- 7. Busqueda Binaria
+- 8. Busqueda Ternaria
+- 9. Union e Interseccion
 - Inicializar tema grafos
 
 Universidad Tecnologica De Pereira
